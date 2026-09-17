@@ -10,7 +10,7 @@ This starter was prepared for class use after reviewing options on GitHub’s [w
 
 - A working one-page site: About, Projects, Experience, Contact
 - Responsive layout for phones, tablets, and desktops
-- GitHub Pages workflow in `.github/workflows/pages.yml`
+- GitHub Pages ready: `index.html` at the repo root plus `.nojekyll`
 - Placeholder copy you can replace
 - SEO basics: title, description, Open Graph tags, canonical URL, `robots.txt`, `sitemap.xml`, and Person structured data
 - A 404 page and a skip-to-content link
@@ -73,19 +73,21 @@ Also replace `YOUR-USERNAME` in:
 
 ## Publish with GitHub Pages
 
-The deployment workflow is already in the repo. After you push to `main`:
+The site is already arranged for GitHub Pages: the homepage is `index.html` at the root, and `.nojekyll` tells GitHub to serve the files as-is.
+
+After you push to `main`:
 
 1. On GitHub, open your fork
 2. Go to **Settings → Pages**
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**
-4. If this is a fork, open the **Actions** tab and enable workflows
-5. Push a commit, or run the **Deploy to GitHub Pages** workflow manually
+3. Under **Build and deployment**, set **Source** to **Deploy from a branch**
+4. Set the branch to `main` and the folder to `/ (root)`
+5. Click **Save**
 
 Your site will be available at:
 
 `https://YOUR-USERNAME.github.io/personal-website-template/`
 
-If GitHub asks you to wait a minute after the first deploy, that is normal.
+The first publish can take a minute. After that, every push to `main` updates the live site.
 
 ### Optional: user site URL
 
@@ -102,8 +104,7 @@ To publish at `https://YOUR-USERNAME.github.io`, rename the repository to `YOUR-
 ├── assets/images/             # Favicon and social preview
 ├── robots.txt
 ├── sitemap.xml
-├── .nojekyll                  # Serve files as-is on GitHub Pages
-└── .github/workflows/pages.yml
+└── .nojekyll                  # Serve files as-is on GitHub Pages
 ```
 
 ## Customize the look
