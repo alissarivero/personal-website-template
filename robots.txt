@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace YOUR-USERNAME and the repo name after you publish.
+Sitemap: https://YOUR-USERNAME.github.io/personal-website-template/sitemap.xml
