@@ -2,6 +2,8 @@
 
 Ready-to-edit personal websites. Use this template, clone it, open it in Cursor, and choose a look.
 
+**Start here:** [Step by step: fork, open in Cursor, publish](WALKTHROUGH.md)
+
 Every option already has a working page, a responsive layout, placeholder content, basic SEO, and GitHub Pages support. No Hugo, npm, or build step.
 
 ## Choose a template
