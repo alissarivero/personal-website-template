@@ -1,29 +1,34 @@
 # Step by step: fork, open in Cursor, publish
 
-Follow this if you are making your own copy of the site. You do not need to install anything besides [Cursor](https://cursor.com) and a [GitHub](https://github.com) account.
+Your live site will be:
 
-**Starter repo:** [github.com/alissarivero/personal-website-template](https://github.com/alissarivero/personal-website-template)
+**`https://YOUR-USERNAME.github.io`**
 
-When you are done, your live site will be:
+That only works if the GitHub repository is named exactly `YOUR-USERNAME.github.io`.
 
-`https://YOUR-USERNAME.github.io/personal-website-template/templates/YOUR-CHOICE/`
+**Starter:** [github.com/alissarivero/personal-website-template](https://github.com/alissarivero/personal-website-template)
+
+You need a [GitHub](https://github.com) account and [Cursor](https://cursor.com). Nothing else to install.
 
 ---
 
-## 1. Make your own copy on GitHub
+## 1. Make your own copy — name it `YOUR-USERNAME.github.io`
 
 1. Sign in at [github.com](https://github.com).
 2. Open [github.com/alissarivero/personal-website-template](https://github.com/alissarivero/personal-website-template).
-3. Click **Use this template** (upper right), then **Create a new repository**.
-   - If you do not see that button, click **Fork**, then **Create fork**.
+3. Click **Use this template** → **Create a new repository**.
+   - If you do not see that, click **Fork**.
 4. Owner: your account.
-5. Repository name: keep `personal-website-template`.
-6. Visibility: **Public** (needed for free GitHub Pages).
+5. **Repository name:** `YOUR-USERNAME.github.io`  
+   Use your real GitHub username. Example: if you are `jane`, the name is `jane.github.io`.
+6. Visibility: **Public**.
 7. Click **Create repository**.
 
-You should now be on `https://github.com/YOUR-USERNAME/personal-website-template`.
+You should now be on `https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io`.
 
-**Check:** the URL contains *your* username, not `alissarivero`.
+If GitHub says that name is taken, you already have a user site. Clone that existing repo and copy these files into it instead of creating a second one.
+
+**Check:** the repo name is `YOUR-USERNAME.github.io`, not `personal-website-template`.
 
 ---
 
@@ -32,132 +37,97 @@ You should now be on `https://github.com/YOUR-USERNAME/personal-website-template
 ### Option A — clone from Cursor
 
 1. Open Cursor.
-2. **File → Clone Repo**.
-   - On the welcome screen it may say **Clone repo** instead.
-3. Choose **Clone from GitHub**. Sign in if Cursor asks.
-4. Select `YOUR-USERNAME/personal-website-template`.
-5. Choose a folder on your computer (Desktop is fine).
-6. When asked **Open the cloned repository?**, click **Open**.
+2. **File → Clone Repo** → **Clone from GitHub**.
+3. Select `YOUR-USERNAME/YOUR-USERNAME.github.io`.
+4. Choose a folder, then **Open**.
 
-### Option B — clone from the terminal
-
-1. On your GitHub repo page, click **Code** and copy the HTTPS URL.
-2. In Cursor: **Terminal → New Terminal**.
-3. Run:
+### Option B — terminal
 
 ```bash
 cd ~/Desktop
-git clone https://github.com/YOUR-USERNAME/personal-website-template.git
+git clone https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io.git
 ```
 
-4. **File → Open Folder…** and select `personal-website-template`.
+Then **File → Open Folder…** and select `YOUR-USERNAME.github.io`.
 
-**Check:** the left sidebar shows `index.html`, `site-config.js`, `WALKTHROUGH.md`, and a `templates` folder. You opened the *folder*, not a single file.
+**Check:** the sidebar shows `index.html`, `site-config.js`, `WALKTHROUGH.md`, `gallery`, and `templates`.
 
 ---
 
-## 3. Preview the site
+## 3. Preview
 
-1. In Cursor, open a terminal (**Terminal → New Terminal**).
-2. Confirm you are in the project folder. If not:
-
-```bash
-cd ~/Desktop/personal-website-template
-```
-
-3. Start a local server and leave it running:
+In Cursor: **Terminal → New Terminal**.
 
 ```bash
 python3 -m http.server 8080
 ```
 
-If `python3` is not found, try `python -m http.server 8080`.
+If that fails, try `python -m http.server 8080`.
 
-4. In a browser, open [http://localhost:8080](http://localhost:8080).
+Open [http://localhost:8080](http://localhost:8080). That page is your homepage.
 
-You should see the gallery: Editorial, Midnight, Scholar, Studio, Letter.
-
-5. Click each look. Pick **one**.
-
-| If you want | Choose | Folder to edit |
-|---|---|---|
-| Warm magazine portfolio | Editorial | `templates/editorial/` |
-| Dark technical site | Midnight | `templates/midnight/` |
-| Academic / CV page | Scholar | `templates/scholar/` |
-| Bold visual site | Studio | `templates/studio/` |
-| Quiet one-column page | Letter | `templates/letter/` |
-
-**Check:** the browser URL looks like `http://localhost:8080/templates/midnight/` (or whichever you picked).
-
-Keep the server running. After you edit files, save in Cursor and refresh the browser.
+To compare looks, open [http://localhost:8080/gallery/](http://localhost:8080/gallery/).
 
 ---
 
-## 4. Set your public website URL
+## 4. Pick a look for the homepage
 
-1. In Cursor’s sidebar, open **`site-config.js`**.
-2. Edit these three lines:
+The homepage starts as **Editorial**. To switch, run one of these in the terminal:
 
-```js
-siteUrl: "https://YOUR-USERNAME.github.io/personal-website-template",
-template: "editorial",
-useTemplateAsHomepage: false
+```bash
+./use-template.sh editorial
+./use-template.sh midnight
+./use-template.sh scholar
+./use-template.sh studio
+./use-template.sh letter
 ```
 
-3. Put your GitHub username in `siteUrl`.
-4. Set `template` to the folder you chose: `editorial`, `midnight`, `scholar`, `studio`, or `letter`.
-5. Save (**Cmd + S** / **Ctrl + S**).
-6. Refresh [http://localhost:8080](http://localhost:8080). The **Your website URL** box should show your share link.
+Refresh [http://localhost:8080](http://localhost:8080).
 
-Optional:
-
-- Want visitors to skip the gallery? Set `useTemplateAsHomepage: true`.
-- Want a shorter URL later? Rename the GitHub repo to `YOUR-USERNAME.github.io` and set `siteUrl` to `https://YOUR-USERNAME.github.io`.
+If you get a permission error, run `chmod +x use-template.sh` once, then try again.
 
 ---
 
-## 5. Put your content in the template
+## 5. Set your public URL
 
-1. In the sidebar, open:
+Open **`site-config.js`** and set:
 
-`templates` → your choice → **`index.html`**
+```js
+siteUrl: "https://YOUR-USERNAME.github.io",
+template: "editorial"
+```
 
-Example: `templates/midnight/index.html`
-
-Do not spend this session rewriting the root `index.html`. That file is only the gallery.
-
-2. Search the project (**Cmd + Shift + F** / **Ctrl + Shift + F**) for `TODO`, then for `Your Name`.
-
-3. In your template’s `index.html`, change:
-
-- Your name in the title, header, and hero
-- The short description
-- About text
-- Three projects
-- Experience or current role
-- Email, GitHub, and LinkedIn
-
-4. Open `templates/YOUR-CHOICE/assets/images/favicon.svg` and change `YN` to your initials.
-
-5. Save, then refresh the local preview of your template.
-
-**Check:** the page shows your name, and the contact links go to you.
+Use your username and the template you just chose. Save.
 
 ---
 
-## 6. Save your work to GitHub from Cursor
+## 6. Put your content on the homepage
 
-1. Click **Source Control** in the left sidebar (the branch icon).
-2. Click **+** next to **Changes** to stage everything.
-3. Message:
+Open the **root** `index.html` (not a file inside `templates/` unless you are only previewing).
 
-`Add my site content`
+Search (**Cmd + Shift + F** / **Ctrl + Shift + F**) for `TODO` and `Your Name`.
 
-4. Click **Commit**.
-5. Click **Sync Changes** (or **Publish Branch**).
-6. Authorize GitHub if Cursor asks.
+Change:
 
-Terminal equivalent:
+- Name, title, and intro
+- About
+- Projects
+- Experience
+- Email, GitHub, LinkedIn
+- Initials in `assets/images/favicon.svg`
+
+Save and refresh localhost.
+
+---
+
+## 7. Push from Cursor
+
+1. **Source Control** (branch icon).
+2. Stage all changes (**+**).
+3. Message: `Add my site content`
+4. **Commit**, then **Sync Changes**.
+
+Or:
 
 ```bash
 git add -A
@@ -165,42 +135,33 @@ git commit -m "Add my site content"
 git push
 ```
 
-**Check:** refresh your GitHub repo in the browser. Your name should appear in the template file you edited.
-
 ---
 
-## 7. Publish with GitHub Pages
+## 8. Turn on GitHub Pages
 
-1. Open `https://github.com/YOUR-USERNAME/personal-website-template`.
-2. Click **Settings**.
-3. In the left sidebar, click **Pages**.
-4. Under **Build and deployment**:
-   - **Source:** Deploy from a branch
-   - **Branch:** `main`
-   - **Folder:** `/ (root)`
-5. Click **Save**.
+1. Open `https://github.com/YOUR-USERNAME/YOUR-USERNAME.github.io`.
+2. **Settings → Pages**.
+3. **Source:** Deploy from a branch.
+4. Branch: `main`, folder: `/ (root)`.
+5. **Save**.
 
-Wait 1–2 minutes, then open:
+GitHub often publishes `USERNAME.github.io` repos automatically. Wait 1–2 minutes, then open:
 
-- Gallery: `https://YOUR-USERNAME.github.io/personal-website-template/`
-- Your site: `https://YOUR-USERNAME.github.io/personal-website-template/templates/YOUR-CHOICE/`
+**https://YOUR-USERNAME.github.io**
 
-If you get a 404, wait another minute and hard-refresh (**Cmd + Shift + R** / **Ctrl + Shift + R**).
-
-**Check:** the live URL loads on your phone as well as your laptop.
+If you see a 404, wait another minute and hard-refresh (**Cmd + Shift + R** / **Ctrl + Shift + R**).
 
 ---
 
 ## You are done when
 
-- [ ] The GitHub repo is under your account
+- [ ] The repo is named `YOUR-USERNAME.github.io`
 - [ ] The project is open as a folder in Cursor
-- [ ] `site-config.js` has your username and chosen template
-- [ ] Your name, about, projects, and links are in that template
-- [ ] You committed and pushed
-- [ ] This URL loads: `https://YOUR-USERNAME.github.io/personal-website-template/templates/YOUR-CHOICE/`
+- [ ] `site-config.js` says `https://YOUR-USERNAME.github.io`
+- [ ] The root `index.html` has your name and work
+- [ ] **https://YOUR-USERNAME.github.io** loads
 
-Share that URL.
+Share that URL. It should not include `/personal-website-template/` or `/templates/`.
 
 ---
 
@@ -208,11 +169,9 @@ Share that URL.
 
 | What you see | What to do |
 |---|---|
-| You are on `alissarivero/personal-website-template` | You cloned the original. Repeat step 1 and open *your* copy. |
-| Cursor cannot list GitHub repos | Sign in to GitHub from Cursor, then clone again. |
-| `python3: command not found` | Try `python -m http.server 8080`, or open `templates/YOUR-CHOICE/index.html` in a browser. |
-| Edits do not show | Save the file, refresh, and confirm you are on `/templates/YOUR-CHOICE/`. |
-| You edited the gallery, not your site | Go back to `templates/YOUR-CHOICE/index.html`. |
-| The URL box still says `YOUR-USERNAME` | Save `site-config.js` and refresh. If it still shows the placeholder, the live site will infer the URL after Pages is on. |
-| `git push` is rejected | Run `git remote -v`. The URL should include your username. |
-| Pages URL 404s | Confirm source is `main` / `/ (root)`, wait 2 minutes, hard-refresh. |
+| Repo is still `personal-website-template` | GitHub → repo **Settings** → rename it to `YOUR-USERNAME.github.io`. |
+| Name is taken | You already have a user site. Put these files in that repo. |
+| Cursor cloned `alissarivero/...` | Clone your copy: `YOUR-USERNAME/YOUR-USERNAME.github.io`. |
+| Homepage is still the old look | Run `./use-template.sh midnight` (or another name), then refresh. |
+| You edited a file under `templates/` | Copy it to the homepage with `./use-template.sh NAME`, or edit root `index.html`. |
+| Pages 404 | Confirm the repo name, Pages source is `main` / `/ (root)`, wait 2 minutes. |

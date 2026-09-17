@@ -4,17 +4,11 @@
 // ============================================================
 
 window.SITE_CONFIG = {
-  // No trailing slash.
-  // Examples:
-  //   https://yourname.github.io/personal-website-template
-  //   https://yourname.github.io          (if you rename the repo to yourname.github.io)
-  //   https://www.yourname.com            (custom domain)
-  siteUrl: "https://YOUR-USERNAME.github.io/personal-website-template",
+  // No trailing slash. This is the URL people will visit.
+  // Name your GitHub repo YOUR-USERNAME.github.io so this is accurate.
+  siteUrl: "https://YOUR-USERNAME.github.io",
 
-  // Which template is your site:
+  // Which look is live on the homepage:
   // editorial | midnight | scholar | studio | letter
-  template: "editorial",
-
-  // true = visitors to the homepage go straight to your chosen template
-  useTemplateAsHomepage: false
+  template: "editorial"
 };

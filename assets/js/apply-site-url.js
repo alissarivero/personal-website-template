@@ -9,9 +9,12 @@
   function inferredSiteUrl() {
     var path = window.location.pathname.replace(/\/index\.html$/, "");
     var idx = path.indexOf("/templates/");
+    if (idx === -1) {
+      idx = path.indexOf("/gallery");
+    }
     var base = idx === -1 ? path.replace(/\/$/, "") : path.slice(0, idx);
-    if (base === "/") {
-      base = "";
+    if (base === "/" || base === "") {
+      return window.location.origin;
     }
     return window.location.origin + base;
   }
@@ -22,25 +25,25 @@
       ? configured
       : trimSlash(inferredSiteUrl());
 
-  var template = String(config.template || "").trim();
   var pageUrl = trimSlash(window.location.href.split("#")[0].replace(/index\.html$/, ""));
   if (!pageUrl.endsWith("/")) {
     pageUrl += "/";
   }
 
-  var onTemplatePage = window.location.pathname.indexOf("/templates/") !== -1;
-  var ogImage = onTemplatePage
+  var shareUrl = siteUrl + "/";
+  var onNestedPage = /\/(templates|gallery)\//.test(window.location.pathname);
+  var ogImage = onNestedPage
     ? pageUrl + "assets/images/og-image.svg"
     : siteUrl + "/assets/images/og-image.svg";
-  var shareUrl = config.useTemplateAsHomepage || !template
-    ? siteUrl + "/"
-    : siteUrl + "/templates/" + template + "/";
+
+  if (window.location.pathname.indexOf("/gallery") !== -1) {
+    ogImage = siteUrl + "/assets/images/og-image.svg";
+  }
 
   window.SITE_URLS = {
     siteUrl: siteUrl,
     pageUrl: pageUrl,
-    shareUrl: shareUrl,
-    templateUrl: template ? siteUrl + "/templates/" + template + "/" : siteUrl + "/"
+    shareUrl: shareUrl
   };
 
   function setAttr(selector, attr, value) {
@@ -58,21 +61,11 @@
   if (ld) {
     try {
       var data = JSON.parse(ld.textContent);
-      data.url = pageUrl;
+      data.url = shareUrl;
       ld.textContent = JSON.stringify(data);
     } catch (error) {
       // Leave the original JSON-LD in place if it cannot be parsed.
     }
-  }
-
-  if (
-    config.useTemplateAsHomepage &&
-    template &&
-    !onTemplatePage &&
-    window.location.protocol !== "file:"
-  ) {
-    window.location.replace("templates/" + template + "/");
-    return;
   }
 
   function applyVisibleUrl() {
