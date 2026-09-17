@@ -1,8 +1,8 @@
 # Personal Website Templates
 
-A set of ready-to-edit personal websites for students. Fork the repo, clone it, open it in Cursor, and choose a look.
+Ready-to-edit personal websites. Use this template, clone it, open it in Cursor, and choose a look.
 
-Every template already has a working page, a responsive layout, placeholder content, basic SEO, and GitHub Pages support. No Hugo, npm, or build step.
+Every option already has a working page, a responsive layout, placeholder content, basic SEO, and GitHub Pages support. No Hugo, npm, or build step.
 
 ## Choose a template
 
@@ -14,60 +14,67 @@ Open the gallery first: [index.html](index.html)
 | [Midnight](templates/midnight/) | A dark, technical developer site | `templates/midnight/` |
 | [Scholar](templates/scholar/) | An academic CV homepage | `templates/scholar/` |
 | [Studio](templates/studio/) | Bold type and visual project blocks | `templates/studio/` |
-| [Letter](templates/letter/) | A quiet one-column note | `templates/letter/` |
+| [Letter](templates/letter/) | A quiet one-column page | `templates/letter/` |
 
-These starters were prepared for class after reviewing options on GitHub’s [website-template](https://github.com/topics/website-template) topic. The public repos there often need extra tools. These five stay on HTML, CSS, and JavaScript so they open immediately.
+## Edit your website URL
 
-## Student setup
+Your public URL lives in one file: [`site-config.js`](site-config.js).
 
-### 1. Fork
-
-1. Open this repository on GitHub.
-2. Click **Use this template** or **Fork**.
-
-### 2. Clone
-
-```bash
-git clone https://github.com/YOUR-USERNAME/personal-website-template.git
-cd personal-website-template
+```js
+siteUrl: "https://YOUR-USERNAME.github.io/personal-website-template",
+template: "editorial",
+useTemplateAsHomepage: false
 ```
 
-### 3. Open in Cursor
+1. Replace `YOUR-USERNAME` with your GitHub username.
+2. Set `template` to `editorial`, `midnight`, `scholar`, `studio`, or `letter`.
+3. Save and refresh the gallery. The **Your website URL** box updates.
 
-- Cursor: **File → Open Folder**
-- Or: `cursor .`
+That share URL is:
 
-Then open `index.html` to compare templates, and edit the one you want.
+`https://YOUR-USERNAME.github.io/personal-website-template/templates/YOUR-CHOICE/`
 
-## Preview
+### Shorter GitHub URL
 
-No install is required.
+Rename the repository to `YOUR-USERNAME.github.io`, then set:
+
+```js
+siteUrl: "https://YOUR-USERNAME.github.io"
+```
+
+### Custom domain
+
+Point the domain at GitHub Pages, add a `CNAME` file in the repo root with your domain, and set:
+
+```js
+siteUrl: "https://www.yourname.com"
+```
+
+### Use your template as the homepage
+
+In `site-config.js` set `useTemplateAsHomepage: true`. Visitors to the root URL go straight to your chosen template, so you can share `siteUrl` by itself.
+
+Also copy `siteUrl` into `robots.txt` and `sitemap.xml` if you want those files to match.
+
+## Setup
+
+1. On GitHub, click **Use this template** or **Fork**.
+2. Clone your copy and open the folder in Cursor.
+3. Preview:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Visit [http://localhost:8080](http://localhost:8080) and click a template.
+Visit [http://localhost:8080](http://localhost:8080).
 
 ## What to edit
 
-In your chosen template folder, search for `TODO` and `YOUR-USERNAME`.
+1. `site-config.js` — your public URL and chosen template
+2. `templates/YOUR-CHOICE/index.html` — name, about, projects, contact
+3. That template’s `assets/images/favicon.svg` — initials
 
-1. Your name in the title, header, and hero
-2. The meta description
-3. About text
-4. Projects, experience, and skills
-5. Email, GitHub, and LinkedIn
-6. Initials in that template’s `assets/images/favicon.svg`
-
-Also replace `YOUR-USERNAME` in the root `robots.txt` and `sitemap.xml`.
-
-## Make one template your homepage
-
-Keep the gallery, or promote one site to the root:
-
-1. Copy the files from `templates/NAME/` over the root `index.html` and `assets/` folders
-2. Update the canonical URLs so they no longer include `/templates/NAME/`
+Search the chosen template for `TODO` while you edit.
 
 ## Publish with GitHub Pages
 
@@ -75,24 +82,21 @@ Keep the gallery, or promote one site to the root:
 2. GitHub: **Settings → Pages**
 3. **Deploy from a branch** → `main` / `/ (root)`
 
-Your gallery will be at:
-
-`https://YOUR-USERNAME.github.io/personal-website-template/`
-
-Each look is at `/templates/editorial/`, `/templates/midnight/`, `/templates/scholar/`, `/templates/studio/`, or `/templates/letter/`.
+Then open the URL shown in the gallery.
 
 ## Project map
 
 ```text
 .
+├── site-config.js             # Edit your public website URL here
 ├── index.html                 # Template chooser
 ├── templates/
-│   ├── editorial/             # Warm magazine portfolio
-│   ├── midnight/              # Dark developer site
-│   ├── scholar/               # Academic CV
-│   ├── studio/                # Bold creative site
-│   └── letter/                # Minimal one-column page
-├── assets/                    # Gallery styles and icons
+│   ├── editorial/
+│   ├── midnight/
+│   ├── scholar/
+│   ├── studio/
+│   └── letter/
+├── assets/
 ├── robots.txt
 ├── sitemap.xml
 └── .nojekyll
@@ -100,4 +104,4 @@ Each look is at `/templates/editorial/`, `/templates/midnight/`, `/templates/sch
 
 ## License
 
-MIT. Students can copy, edit, and republish these starters for class and personal use.
+MIT. Copy, edit, and republish this starter.

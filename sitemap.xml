@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Replace YOUR-USERNAME after you publish to GitHub Pages. -->
+  <!-- Keep these URLs in sync with siteUrl in site-config.js -->
   <url>
     <loc>https://YOUR-USERNAME.github.io/personal-website-template/</loc>
     <priority>1.0</priority>
