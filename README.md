@@ -1,29 +1,29 @@
-# Personal Website Template
+# Personal Website Templates
 
-A ready-to-edit personal website for students. It already has a working page, a responsive layout, placeholder content, basic SEO, and GitHub Pages deployment.
+A set of ready-to-edit personal websites for students. Fork the repo, clone it, open it in Cursor, and choose a look.
 
-You only need to **fork, clone, and open the project in Cursor**.
+Every template already has a working page, a responsive layout, placeholder content, basic SEO, and GitHub Pages support. No Hugo, npm, or build step.
 
-This starter was prepared for class use after reviewing options on GitHub’s [website-template](https://github.com/topics/website-template) topic. The popular repos there are useful, but many need Hugo, npm, or extra setup before a site will run. This template stays on plain HTML, CSS, and JavaScript so it opens immediately.
+## Choose a template
 
-## What you get
+Open the gallery first: [index.html](index.html)
 
-- A working one-page site: About, Projects, Experience, Contact
-- Responsive layout for phones, tablets, and desktops
-- GitHub Pages ready: `index.html` at the repo root plus `.nojekyll`
-- Placeholder copy you can replace
-- SEO basics: title, description, Open Graph tags, canonical URL, `robots.txt`, `sitemap.xml`, and Person structured data
-- A 404 page and a skip-to-content link
+| Template | Best if you want | Folder |
+|---|---|---|
+| [Editorial](templates/editorial/) | A warm magazine-style portfolio | `templates/editorial/` |
+| [Midnight](templates/midnight/) | A dark, technical developer site | `templates/midnight/` |
+| [Scholar](templates/scholar/) | An academic CV homepage | `templates/scholar/` |
+| [Studio](templates/studio/) | Bold type and visual project blocks | `templates/studio/` |
+| [Letter](templates/letter/) | A quiet one-column note | `templates/letter/` |
+
+These starters were prepared for class after reviewing options on GitHub’s [website-template](https://github.com/topics/website-template) topic. The public repos there often need extra tools. These five stay on HTML, CSS, and JavaScript so they open immediately.
 
 ## Student setup
 
 ### 1. Fork
 
 1. Open this repository on GitHub.
-2. Click **Fork**.
-3. Create the fork under your own account.
-
-If you see **Use this template**, that works even better. It makes a clean copy without the extra fork relationship.
+2. Click **Use this template** or **Fork**.
 
 ### 2. Clone
 
@@ -34,83 +34,70 @@ cd personal-website-template
 
 ### 3. Open in Cursor
 
-- Cursor: **File → Open Folder** and choose the cloned folder
-- Or from a terminal: `cursor .`
+- Cursor: **File → Open Folder**
+- Or: `cursor .`
 
-Open `index.html` and start replacing the placeholder text.
+Then open `index.html` to compare templates, and edit the one you want.
 
-## Preview the site
+## Preview
 
-No install is required. Use any of these:
-
-- Right-click `index.html` in Cursor and preview it
-- Drag `index.html` into a browser
-- Or run a local server:
+No install is required.
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Then visit [http://localhost:8080](http://localhost:8080).
+Visit [http://localhost:8080](http://localhost:8080) and click a template.
 
-## What to edit first
+## What to edit
 
-Search the project for `TODO` and `YOUR-USERNAME`. The important edits are in `index.html`:
+In your chosen template folder, search for `TODO` and `YOUR-USERNAME`.
 
-1. Your name in the `<title>`, header, and hero
+1. Your name in the title, header, and hero
 2. The meta description
-3. About text, city, school, and what you are looking for
-4. Three projects with real titles and links
-5. Experience and skills
-6. Email, GitHub, and LinkedIn
-7. The initials in `assets/images/favicon.svg`
+3. About text
+4. Projects, experience, and skills
+5. Email, GitHub, and LinkedIn
+6. Initials in that template’s `assets/images/favicon.svg`
 
-Also replace `YOUR-USERNAME` in:
+Also replace `YOUR-USERNAME` in the root `robots.txt` and `sitemap.xml`.
 
-- `index.html` (canonical URL, Open Graph URL, JSON-LD)
-- `robots.txt`
-- `sitemap.xml`
+## Make one template your homepage
+
+Keep the gallery, or promote one site to the root:
+
+1. Copy the files from `templates/NAME/` over the root `index.html` and `assets/` folders
+2. Update the canonical URLs so they no longer include `/templates/NAME/`
 
 ## Publish with GitHub Pages
 
-The site is already arranged for GitHub Pages: the homepage is `index.html` at the root, and `.nojekyll` tells GitHub to serve the files as-is.
+1. Push to `main`
+2. GitHub: **Settings → Pages**
+3. **Deploy from a branch** → `main` / `/ (root)`
 
-After you push to `main`:
-
-1. On GitHub, open your fork
-2. Go to **Settings → Pages**
-3. Under **Build and deployment**, set **Source** to **Deploy from a branch**
-4. Set the branch to `main` and the folder to `/ (root)`
-5. Click **Save**
-
-Your site will be available at:
+Your gallery will be at:
 
 `https://YOUR-USERNAME.github.io/personal-website-template/`
 
-The first publish can take a minute. After that, every push to `main` updates the live site.
-
-### Optional: user site URL
-
-To publish at `https://YOUR-USERNAME.github.io`, rename the repository to `YOUR-USERNAME.github.io` and update the URLs in `index.html`, `robots.txt`, and `sitemap.xml`.
+Each look is at `/templates/editorial/`, `/templates/midnight/`, `/templates/scholar/`, `/templates/studio/`, or `/templates/letter/`.
 
 ## Project map
 
 ```text
 .
-├── index.html                 # The website
-├── 404.html                   # GitHub Pages missing-page view
-├── assets/css/styles.css      # Layout and colors
-├── assets/js/main.js          # Mobile menu and footer year
-├── assets/images/             # Favicon and social preview
+├── index.html                 # Template chooser
+├── templates/
+│   ├── editorial/             # Warm magazine portfolio
+│   ├── midnight/              # Dark developer site
+│   ├── scholar/               # Academic CV
+│   ├── studio/                # Bold creative site
+│   └── letter/                # Minimal one-column page
+├── assets/                    # Gallery styles and icons
 ├── robots.txt
 ├── sitemap.xml
-└── .nojekyll                  # Serve files as-is on GitHub Pages
+└── .nojekyll
 ```
-
-## Customize the look
-
-Colors and fonts live in the `:root` block at the top of `assets/css/styles.css`. Change `--accent`, `--bg`, and `--highlight` to restyle the whole site.
 
 ## License
 
-MIT. Students can copy, edit, and republish this starter for class and personal use.
+MIT. Students can copy, edit, and republish these starters for class and personal use.

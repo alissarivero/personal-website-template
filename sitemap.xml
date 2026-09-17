@@ -3,7 +3,21 @@
   <!-- Replace YOUR-USERNAME after you publish to GitHub Pages. -->
   <url>
     <loc>https://YOUR-USERNAME.github.io/personal-website-template/</loc>
-    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://YOUR-USERNAME.github.io/personal-website-template/templates/editorial/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-USERNAME.github.io/personal-website-template/templates/midnight/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-USERNAME.github.io/personal-website-template/templates/scholar/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-USERNAME.github.io/personal-website-template/templates/studio/</loc>
+  </url>
+  <url>
+    <loc>https://YOUR-USERNAME.github.io/personal-website-template/templates/letter/</loc>
   </url>
 </urlset>
