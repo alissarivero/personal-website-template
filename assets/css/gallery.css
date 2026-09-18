@@ -151,6 +151,60 @@ h1 {
   color: #f7f4ee;
 }
 
+.preview.atlas {
+  background: #1d4ed8;
+  color: #e8eaee;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.preview.frame {
+  background: #111;
+  color: #fff;
+}
+
+.preview.newsprint {
+  background: #f4f1ea;
+  color: #111;
+  border-bottom: 1px solid #d5cec0;
+}
+
+.preview.blueprint {
+  background: #0e7490;
+  color: #f3f7fb;
+  font-family: ui-monospace, monospace;
+}
+
+.preview.quartz {
+  background: #fafafa;
+  color: #111;
+  border-bottom: 1px solid #d5cec0;
+}
+
+.preview.ledger {
+  background: #3f4f2f;
+  color: #f6f3ea;
+}
+
+.preview.nova {
+  background: #140c22;
+  color: #e879f9;
+}
+
+.preview.archive {
+  background: #8c4a4a;
+  color: #f7f0e8;
+}
+
+.preview.workbench {
+  background: #e2b007;
+  color: #1c1a16;
+}
+
+.preview.summit {
+  background: #1f3d2d;
+  color: #eef3ee;
+}
+
 .preview strong {
   display: block;
   font-size: 2rem;
@@ -158,8 +212,13 @@ h1 {
   line-height: 1;
 }
 
-.preview.midnight strong {
+.preview.midnight strong,
+.preview.blueprint strong {
   font-family: ui-monospace, monospace;
+}
+
+.preview.atlas strong {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .copy {

@@ -7,7 +7,7 @@ SRC="$ROOT/templates/$NAME"
 
 if [ ! -d "$SRC" ]; then
   echo "Unknown template: $NAME"
-  echo "Use one of: editorial midnight scholar studio letter"
+  echo "Use one of: editorial midnight scholar studio letter atlas frame newsprint blueprint quartz ledger nova archive workbench summit"
   exit 1
 fi
 
@@ -25,7 +25,7 @@ import sys
 config = pathlib.Path(sys.argv[1])
 name = sys.argv[2]
 text = config.read_text()
-for option in ("editorial", "midnight", "scholar", "studio", "letter"):
+for option in ("editorial", "midnight", "scholar", "studio", "letter", "atlas", "frame", "newsprint", "blueprint", "quartz", "ledger", "nova", "archive", "workbench", "summit"):
     text = text.replace(f'template: "{option}"', f'template: "{name}"')
 config.write_text(text)
 PY

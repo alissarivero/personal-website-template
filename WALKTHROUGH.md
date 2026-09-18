@@ -80,6 +80,16 @@ The homepage starts as **Editorial**. To switch, run one of these in the termina
 ./use-template.sh scholar
 ./use-template.sh studio
 ./use-template.sh letter
+./use-template.sh atlas
+./use-template.sh frame
+./use-template.sh newsprint
+./use-template.sh blueprint
+./use-template.sh quartz
+./use-template.sh ledger
+./use-template.sh nova
+./use-template.sh archive
+./use-template.sh workbench
+./use-template.sh summit
 ```
 
 Refresh [http://localhost:8080](http://localhost:8080).

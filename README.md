@@ -16,6 +16,16 @@ Preview looks at [gallery/index.html](gallery/index.html), then put one on the h
 ./use-template.sh scholar
 ./use-template.sh studio
 ./use-template.sh letter
+./use-template.sh atlas
+./use-template.sh frame
+./use-template.sh newsprint
+./use-template.sh blueprint
+./use-template.sh quartz
+./use-template.sh ledger
+./use-template.sh nova
+./use-template.sh archive
+./use-template.sh workbench
+./use-template.sh summit
 ```
 
 | Template | Best if you want |
@@ -25,6 +35,16 @@ Preview looks at [gallery/index.html](gallery/index.html), then put one on the h
 | Scholar | An academic CV homepage |
 | Studio | Bold type and visual project blocks |
 | Letter | A quiet one-column page |
+| Atlas | A Swiss grid for product and systems work |
+| Frame | A visual portfolio of large picture frames |
+| Newsprint | A newspaper masthead for writing |
+| Blueprint | Technical drawings for engineering |
+| Quartz | Minimal luxury with lots of space |
+| Ledger | A tabular CV for data and finance |
+| Nova | A colorful dark site for creative tech |
+| Archive | A museum catalog for history and curation |
+| Workbench | An industrial maker / hardware look |
+| Summit | Outdoor field notes and landscape |
 
 ## Your website URL
 
@@ -53,8 +73,8 @@ Then publish with GitHub Pages from `main` / `/ (root)`. Share:
 ├── site-config.js             # Your public URL
 ├── index.html                 # Your homepage
 ├── use-template.sh            # Put a look on the homepage
-├── gallery/                   # Preview all five looks
-└── templates/                 # Editorial, Midnight, Scholar, Studio, Letter
+├── gallery/                   # Preview all fifteen looks
+└── templates/                 # Fifteen self-contained site looks
 ```
 
 ## License

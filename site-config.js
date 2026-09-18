@@ -10,5 +10,7 @@ window.SITE_CONFIG = {
 
   // Which look is live on the homepage:
   // editorial | midnight | scholar | studio | letter
+  // atlas | frame | newsprint | blueprint | quartz
+  // ledger | nova | archive | workbench | summit
   template: "editorial"
 };
