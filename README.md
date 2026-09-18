@@ -8,7 +8,7 @@ When you create your copy, name the repository **`YOUR-USERNAME.github.io`**. Th
 
 ## Choose a template
 
-Preview looks at [gallery/index.html](gallery/index.html), then put one on the homepage:
+Preview looks at [gallery/index.html](gallery/index.html). The published starter opens there too. Then put one on the homepage:
 
 ```bash
 ./use-template.sh editorial

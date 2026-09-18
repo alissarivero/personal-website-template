@@ -64,15 +64,13 @@ python3 -m http.server 8080
 
 If that fails, try `python -m http.server 8080`.
 
-Open [http://localhost:8080](http://localhost:8080). That page is your homepage.
-
-To compare looks, open [http://localhost:8080/gallery/](http://localhost:8080/gallery/).
+Open [http://localhost:8080](http://localhost:8080). You should see every template.
 
 ---
 
 ## 4. Pick a look for the homepage
 
-The homepage starts as **Editorial**. To switch, run one of these in the terminal:
+The site opens on the picker. To put a look on the homepage, run one of these in the terminal:
 
 ```bash
 ./use-template.sh editorial

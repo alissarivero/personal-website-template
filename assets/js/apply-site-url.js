@@ -85,6 +85,10 @@
         link.textContent = shareUrl;
       }
     });
+
+    document.querySelectorAll('a[href="/gallery/"], a[href="/gallery"]').forEach(function (link) {
+      link.setAttribute("href", siteUrl + "/gallery/");
+    });
   }
 
   if (document.readyState === "loading") {
